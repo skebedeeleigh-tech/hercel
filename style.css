@@ -8,61 +8,86 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: #f4f7fb;
-    color: #222;
+    background: #090009;
+    color: white;
     line-height: 1.6;
 }
 
 
-/* =========================
-   NAVIGATION
-   ========================= */
+/* NAVIGATION */
 
 nav {
     width: 100%;
-    padding: 20px 8%;
+    padding: 22px 8%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
-    border-bottom: 1px solid #ddd;
+
+    background: #0d000d;
+    border-bottom: 1px solid #ff1493;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav h2 {
-    font-size: 24px;
-    letter-spacing: 1px;
+    color: #ff1493;
+    font-size: 25px;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 5px #ff1493,
+        0 0 15px #ff1493;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-size: 15px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #4f46e5;
+    color: #ff1493;
+
+    text-shadow:
+        0 0 8px #ff1493,
+        0 0 15px #ff1493;
 }
 
 
-/* =========================
-   HOME SECTION
-   ========================= */
+/* HOME */
 
 .hero {
-    min-height: 85vh;
+    min-height: 90vh;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 70px 10%;
+
+    padding: 80px 10%;
     gap: 50px;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 20, 147, 0.15),
+            transparent 35%
+        );
 }
 
 .hero-text {
@@ -70,39 +95,39 @@ nav a:hover {
 }
 
 
-/* =========================
-   TYPOGRAPHY
-   ========================= */
+/* TYPOGRAPHY */
 
 .small-title {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #4f46e5;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #ff1493;
     font-weight: bold;
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 65px;
     line-height: 1.1;
     margin: 15px 0;
     font-weight: 800;
 }
 
 .hero h1 span {
-    color: #4f46e5;
+    color: #ff1493;
+
+    text-shadow:
+        0 0 5px #ff1493,
+        0 0 15px #ff1493,
+        0 0 30px #ff1493;
 }
 
-.hero p {
+.intro {
+    color: #d8cbd5;
     font-size: 18px;
-    color: #666;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 
-/* =========================
-   BUTTONS
-   ========================= */
+/* BUTTONS */
 
 .buttons {
     display: flex;
@@ -110,187 +135,256 @@ nav a:hover {
 }
 
 .btn {
-    padding: 13px 25px;
-    border-radius: 8px;
+    padding: 13px 28px;
+
+    border-radius: 5px;
+
     text-decoration: none;
     font-weight: bold;
-    display: inline-block;
+
     transition: 0.3s;
 }
 
 .primary {
-    background: #4f46e5;
+    background: #ff1493;
     color: white;
+
+    box-shadow:
+        0 0 8px #ff1493,
+        0 0 20px rgba(255, 20, 147, 0.5);
 }
 
 .primary:hover {
-    background: #3730a3;
-    transform: translateY(-3px);
+    background: #ff4bab;
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 10px #ff1493,
+        0 0 30px #ff1493;
 }
 
 .secondary {
-    border: 2px solid #4f46e5;
-    color: #4f46e5;
+    border: 1px solid #ff1493;
+    color: #ff1493;
 }
 
 .secondary:hover {
-    background: #4f46e5;
+    background: #ff1493;
     color: white;
+
+    box-shadow:
+        0 0 10px #ff1493,
+        0 0 25px rgba(255, 20, 147, 0.7);
 }
 
 
-/* =========================
-   PROFILE CARD
-   ========================= */
+/* PROFILE */
 
 .profile-card {
-    background: white;
     width: 300px;
-    padding: 30px;
-    border-radius: 20px;
+    padding: 35px;
+
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    background: #110011;
+
+    border: 1px solid #ff1493;
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 10px rgba(255, 20, 147, 0.3),
+        inset 0 0 20px rgba(255, 20, 147, 0.05);
 }
 
 .profile-circle {
     width: 150px;
     height: 150px;
+
     margin: auto;
+
     border-radius: 50%;
-    background: #e0e7ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 55px;
+    overflow: hidden;
+
+    border: 2px solid #ff1493;
+
+    background: #1b001b;
+
+    box-shadow:
+        0 0 10px #ff1493,
+        0 0 30px rgba(255, 20, 147, 0.5);
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
 }
 
 .profile-card h2 {
     margin-top: 20px;
+    color: #ff1493;
 }
 
 .profile-card p {
-    color: #777;
+    color: #bdaeba;
 }
 
 
-/* =========================
-   SECTIONS
-   ========================= */
+/* SECTIONS */
 
 .section {
-    padding: 80px 10%;
+    padding: 90px 10%;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-title h2 {
-    font-size: 38px;
+    margin-bottom: 45px;
 }
 
 .section-title p {
-    color: #777;
+    color: #ff1493;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    margin-top: 5px;
 }
 
 
-/* =========================
-   ABOUT
-   ========================= */
+/* ABOUT */
 
 .about-box {
     max-width: 900px;
+
     margin: auto;
-    background: white;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+
+    background: #110011;
+
+    border: 1px solid #ff1493;
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 15px rgba(255, 20, 147, 0.15);
 }
 
 .about-box p {
-    margin-bottom: 15px;
+    color: #d8cbd5;
+    margin-bottom: 18px;
+    font-size: 17px;
 }
 
 
-/* =========================
-   HOBBIES
-   ========================= */
+/* HOBBIES */
 
 .hobbies {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 25px;
 }
 
 .hobby-card {
-    background: white;
+    background: #110011;
+
     padding: 30px;
-    border-radius: 15px;
-    border-top: 5px solid #4f46e5;
+
+    border: 1px solid #4a1640;
+    border-radius: 12px;
+
     transition: 0.3s;
 }
 
 .hobby-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: #ff1493;
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 10px rgba(255, 20, 147, 0.5),
+        0 0 25px rgba(255, 20, 147, 0.2);
+}
+
+.hobby-number {
+    color: #ff1493;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
 }
 
 .hobby-card h3 {
-    margin-bottom: 10px;
-    font-size: 21px;
+    font-size: 22px;
+    margin-bottom: 12px;
 }
 
 .hobby-card p {
-    color: #666;
+    color: #bdaeba;
 }
 
 
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 
 footer {
-    background: #111827;
-    color: white;
-    text-align: center;
     padding: 25px;
-    margin-top: 50px;
+
+    text-align: center;
+
+    background: #050005;
+
+    border-top: 1px solid #ff1493;
 }
 
 footer p {
-    font-size: 14px;
+    color: #a99aa6;
+    font-size: 13px;
 }
 
 
-/* =========================
-   RESPONSIVE DESIGN
-   ========================= */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
+
+    nav ul {
+        display: none;
+    }
 
     .hero {
         flex-direction: column;
         text-align: center;
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
     }
 
     .buttons {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .hero h1 {
-        font-size: 42px;
+    .profile-card {
+        width: 280px;
     }
 
     .hobbies {
         grid-template-columns: 1fr;
     }
 
-    nav ul {
-        display: none;
+    .section-title h2 {
+        font-size: 32px;
     }
 
-    .profile-card {
-        width: 280px;
+    .about-box {
+        padding: 25px;
     }
 }
